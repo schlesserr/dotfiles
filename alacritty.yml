@@ -38,7 +38,7 @@ font:
     #x: 0
    ## Keeping this as half of offset to vertically align the text in cursor
     #y: 7
-#background_opacity: 0.95
+background_opacity: 0.7
 window:
   padding:
     x: 6
