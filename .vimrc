@@ -4,8 +4,6 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-fugitive'
 Plug 'morhetz/gruvbox'
 Plug 'joshdick/onedark.vim'
-Plug 'dracula/vim', {'as': 'dracula'}
-Plug 'tomasr/molokai'
 Plug 'ap/vim-css-color'
 Plug 'vim-airline/vim-airline'
 Plug 'ap/vim-buftabline'
@@ -25,7 +23,7 @@ Plug 'maxmellon/vim-jsx-pretty'
 Plug 'preservim/nerdcommenter'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'jpalardy/vim-slime'
+Plug 'jupyter-vim/jupyter-vim'
 call plug#end()
 
 filetype plugin indent on
@@ -50,10 +48,6 @@ set fileformat=unix
 set encoding=utf-8
 set fileencoding=utf-8
 
-"vim slime
-let g:slime_python_ipython = 1
-let g:slime_target = "tmux"
-let g:slime_default_config = {"socket_name": get(split($TMUX, ","), 0), "target_pane": ":.2"}
 " sane editing
 set tabstop=4
 set shiftwidth=4
@@ -105,9 +99,6 @@ colorscheme gruvbox
 set bg=dark
 let g:gruvbox_contrast_dark='hard'
 
-
-"molokai
-"let g:molokai_original = 1
 
 filetype on
 filetype plugin indent on
