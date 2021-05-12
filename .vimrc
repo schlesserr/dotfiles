@@ -1,17 +1,12 @@
 " plugins
-call plug#begin()
+call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-fugitive'
 Plug 'morhetz/gruvbox'
 Plug 'joshdick/onedark.vim'
 Plug 'ap/vim-css-color'
 Plug 'vim-airline/vim-airline'
-Plug 'ap/vim-buftabline'
 Plug 'airblade/vim-gitgutter'
-Plug 'preservim/nerdtree'
-Plug 'jistr/vim-nerdtree-tabs'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'jiangmiao/auto-pairs'
 Plug 'dense-analysis/ale'
 Plug 'majutsushi/tagbar'
 Plug 'vim-scripts/indentpython.vim'
@@ -19,7 +14,6 @@ Plug 'lepture/vim-jinja'
 Plug 'pangloss/vim-javascript'
 Plug 'alvan/vim-closetag'
 Plug 'mattn/emmet-vim'
-Plug 'maxmellon/vim-jsx-pretty'
 Plug 'preservim/nerdcommenter'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -31,13 +25,9 @@ syntax on
 set noswapfile
 set scrolloff=20
 set incsearch
+let mapleader='\'
 " always show the status bar
 set laststatus=2
-
-" enable 256 colors
-set t_Co=256
-"set termguicolors
-set t_ut=
 
 " turn on line numbering
 set relativenumber
@@ -59,8 +49,22 @@ autocmd FileType html setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType css setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2
 
-" auto-pairs
-au FileType python let b:AutoPairs = AutoPairsDefine({"f'" : "'", "r'" : "'", "b'" : "'"})
+" color scheme
+highlight Comment cterm=italic gui=italic
+colorscheme onedark
+set background=dark
+let g:gruvbox_contrast_dark='hard'
+
+" enable 256 colors
+set t_Co=256
+
+
+" airline
+set noshowmode
+let g:airline_theme = 'onedark'
+
+filetype on
+filetype plugin indent on
 
 " word movement
 imap <S-Left> <Esc>bi
@@ -75,38 +79,6 @@ imap <S-Tab> <Esc><<i
 vmap <Tab> >gv
 vmap <S-Tab> <gv
 
-" mouse
-set mouse=a
-let g:is_mouse_enabled = 1
-noremap <silent> <Leader>m :call ToggleMouse()<CR>
-function ToggleMouse()
-    if g:is_mouse_enabled == 1
-        echo "Mouse OFF"
-        set mouse=
-        let g:is_mouse_enabled = 0
-    else
-        echo "Mouse ON"
-        set mouse=a
-        let g:is_mouse_enabled = 1
-    endif
-endfunction
-
-" color scheme
-syntax on
-highlight Comment cterm=italic gui=italic
-colorscheme gruvbox
-" grubox
-set bg=dark
-let g:gruvbox_contrast_dark='hard'
-
-
-filetype on
-filetype plugin indent on
-
-" airline
-set noshowmode
-let g:airline_theme = 'gruvbox'
-
 "" code folding
 set foldmethod=indent
 set foldlevel=99
@@ -117,21 +89,9 @@ nmap <leader><Down> :wincmd j<CR>
 nmap <leader><Left> :wincmd h<CR>
 nmap <leader><Right> :wincmd l<CR>
 
-" move through buffers
-nmap <leader>[ :bp!<CR>
-nmap <leader>] :bn!<CR>
-nmap <leader>x :bd<CR>
 
 " restore place in file from previous session
 autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-
-" NerdTree
-let NERDTreeIgnore = ['\.pyc$', '__pycache__', '\.egg-info']
-let NERDTreeMinimalUI = 1
-autocmd VimEnter * NERDTree | wincmd p
-map <C-t> :NERDTreeToggle<CR>
-autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
-    \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
 
 
 " ale
@@ -162,10 +122,10 @@ nmap <F8> :TagbarToggle<CR>
 
 "fugitive
 :map <C-f> :Files<CR>
-:map <leader>b :Buffers<CR>
+:map <C-x> :Buffers<CR>
 "ripgrep
 :map <C-r> :Rg<CR>
-"let g:fzf_layout = {'window': {'width': 0.9, 'height': 0.9}}
+"let g:fzf_layout = {'window': {'width': 0.9, 'height': 0.9}} only vim 8.2
 
 " disable autoindent when pasting text
 " source: https://coderwall.com/p/if9mda/automatically-set-paste-mode-in-vim-when-pasting-in-insert-mode
