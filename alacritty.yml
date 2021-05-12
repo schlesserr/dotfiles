@@ -7,15 +7,16 @@ font:
   # note: you may use any font you'd like but make sure the normal fonts
   # support ligatures/glyphs. that's used by tmux & vim to provide a better
   # ui for powerline & tmux bottom bar.
+  size: 14
   normal:
     ## Font name
-    family: Fira Code 
+    family: FiraCode Nerd Font
     ## Font face
     style: Retina
 
   ## Bold font face
   bold:
-    family: Fira Code 
+    family: FiraCode Nerd Font
     style: Bold
 
   # Italic font face
@@ -52,9 +53,9 @@ selection:
 
 key_bindings:
   # Use command + [ - to go to previous tmux window
-  - { key: LBracket, mods: Control, chars: "\x02\x70" }
+  - { key: LBracket, mods: Control, chars: "\x01\x70" }
   # Use command + ] - to go to next tmux window
-  - { key: RBracket, mods: Control, chars: "\x02\x6e" }
+  - { key: RBracket, mods: Control, chars: "\x01\x6e" }
 
 #colors:
   ## Default colors

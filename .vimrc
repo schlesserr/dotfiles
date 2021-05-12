@@ -5,7 +5,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'morhetz/gruvbox'
 Plug 'joshdick/onedark.vim'
 Plug 'ap/vim-css-color'
-Plug 'vim-airline/vim-airline'
+Plug 'itchyny/lightline.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'dense-analysis/ale'
 Plug 'majutsushi/tagbar'
@@ -58,10 +58,8 @@ let g:gruvbox_contrast_dark='hard'
 " enable 256 colors
 set t_Co=256
 
-
-" airline
 set noshowmode
-let g:airline_theme = 'onedark'
+let g:lightline = {'colorscheme': 'onedark'}
 
 filetype on
 filetype plugin indent on
@@ -122,10 +120,10 @@ nmap <F8> :TagbarToggle<CR>
 
 "fugitive
 :map <C-f> :Files<CR>
-:map <C-x> :Buffers<CR>
+:map <C-b> :Buffers<CR>
 "ripgrep
 :map <C-r> :Rg<CR>
-"let g:fzf_layout = {'window': {'width': 0.9, 'height': 0.9}} only vim 8.2
+let g:fzf_layout = {'window': {'width': 0.9, 'height': 0.9}}
 
 " disable autoindent when pasting text
 " source: https://coderwall.com/p/if9mda/automatically-set-paste-mode-in-vim-when-pasting-in-insert-mode
