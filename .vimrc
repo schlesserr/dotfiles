@@ -2,6 +2,7 @@
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
 Plug 'morhetz/gruvbox'
 Plug 'joshdick/onedark.vim'
 Plug 'ap/vim-css-color'
@@ -18,6 +19,7 @@ Plug 'preservim/nerdcommenter'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'jupyter-vim/jupyter-vim'
+Plug 'fenetikm/falcon'
 call plug#end()
 
 filetype plugin indent on
@@ -28,7 +30,7 @@ set incsearch
 let mapleader='\'
 " always show the status bar
 set laststatus=2
-
+set cursorline
 " turn on line numbering
 set relativenumber
 set nu
@@ -50,16 +52,16 @@ autocmd FileType css setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2
 
 " color scheme
-highlight Comment cterm=italic gui=italic
-colorscheme onedark
+colorscheme falcon
 set background=dark
 let g:gruvbox_contrast_dark='hard'
-
+highlight Comment cterm=italic
+"highlight ColorColumn ctermbg=0 guibg=lightgrey
 " enable 256 colors
 set t_Co=256
 
 set noshowmode
-let g:lightline = {'colorscheme': 'onedark'}
+let g:lightline = {'colorscheme': 'falcon'}
 
 filetype on
 filetype plugin indent on
@@ -107,18 +109,18 @@ nmap <F8> :TagbarToggle<CR>
 ":map! works un insert and command-line mode
 
 " copy
-:map <C-c> "+y
-:map! <C-c> "+y
+":map <C-c> "+y
+":map! <C-c> "+y
 
 "cut
-:map <C-x> "+c
-:map! <C-x> "+c
+":map <C-x> "+c
+":map! <C-x> "+c
 
 "paste
-:map <C-v> c<ESC>"+p
-:map! <C-v> <ESC>"+pa
+":map <C-v> c<ESC>"+p
+":map! <C-v> <ESC>"+pa
 
-"fugitive
+"fzf
 :map <C-f> :Files<CR>
 :map <C-b> :Buffers<CR>
 "ripgrep
@@ -129,3 +131,6 @@ let g:fzf_layout = {'window': {'width': 0.9, 'height': 0.9}}
 " source: https://coderwall.com/p/if9mda/automatically-set-paste-mode-in-vim-when-pasting-in-insert-mode
 let &t_SI .= "\<Esc>[?2004h"
 let &t_EI .= "\<Esc>[?2004l"
+
+let &t_ZH="\e[3m"
+let &t_ZR="\e[23m"

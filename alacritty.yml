@@ -1,5 +1,5 @@
-import:
-    - .config/alacritty/dracula.yml
+#import:
+    #- .config/alacritty/dracula.yml
 # Sample Font configuration for font: Monoid.
 # Feel free to use different font configuration family & face for each sections
 font:
@@ -7,21 +7,21 @@ font:
   # note: you may use any font you'd like but make sure the normal fonts
   # support ligatures/glyphs. that's used by tmux & vim to provide a better
   # ui for powerline & tmux bottom bar.
-  size: 14
+  #size: 14
   normal:
     ## Font name
-    family: FiraCode Nerd Font
+    family: FiraCode
     ## Font face
     style: Retina
 
   ## Bold font face
   bold:
-    family: FiraCode Nerd Font
+    family: FiraCode
     style: Bold
 
   # Italic font face
   italic:
-    family: Fira Code
+    family: OperatorMono
     style: Italic
 
   ### Offset is the extra space around each character. `offset.y` can be thought of
@@ -39,13 +39,14 @@ font:
     #x: 0
    ## Keeping this as half of offset to vertically align the text in cursor
     #y: 7
-background_opacity: 0.95
 window:
   padding:
     x: 6
     y: 6
-  startup_mode: Fullscreen
+  startup_mode: Windowed
 
+
+#background_opacity: 0.75
 live_config_reload: true
 
 selection:
