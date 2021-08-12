@@ -7,16 +7,16 @@ font:
   # note: you may use any font you'd like but make sure the normal fonts
   # support ligatures/glyphs. that's used by tmux & vim to provide a better
   # ui for powerline & tmux bottom bar.
-  #size: 14
+  size: 10
   normal:
     ## Font name
-    family: FiraCode
+    family: Terminus
     ## Font face
-    style: Retina
+    style: Regular
 
   ## Bold font face
   bold:
-    family: FiraCode
+    family: Terminus
     style: Bold
 
   # Italic font face
