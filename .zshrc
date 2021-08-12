@@ -41,3 +41,11 @@ fd() {
   git diff $@ --name-only | fzf -m --ansi --preview $preview
 }
 
+export EDITOR=vim
+export NNN_FIFO='/tmp/nnn.fifo' 
+export NNN_PLUG='p:preview-tui'
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
+
+alias pyconvert="~/Python/convert && source .venv/bin/activate"
+alias dbs="systemctl start redis && systemctl start postgresql"
