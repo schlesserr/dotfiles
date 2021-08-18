@@ -3,6 +3,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
 Plug 'morhetz/gruvbox'
 Plug 'joshdick/onedark.vim'
 Plug 'ap/vim-css-color'
@@ -15,7 +16,6 @@ Plug 'lepture/vim-jinja'
 Plug 'pangloss/vim-javascript'
 Plug 'alvan/vim-closetag'
 Plug 'mattn/emmet-vim'
-Plug 'preservim/nerdcommenter'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'jupyter-vim/jupyter-vim'
@@ -126,6 +126,7 @@ nmap <F8> :TagbarToggle<CR>
 "ripgrep
 :map <C-r> :Rg<CR>
 let g:fzf_layout = {'window': {'width': 0.9, 'height': 0.9}}
+let g:help_layout = {'window': {'width': 0.9, 'height': 0.9}}
 
 " disable autoindent when pasting text
 " source: https://coderwall.com/p/if9mda/automatically-set-paste-mode-in-vim-when-pasting-in-insert-mode
