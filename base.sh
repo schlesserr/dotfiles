@@ -9,7 +9,7 @@ echo "127.0.0.1 localhost" >> /etc/hosts
 echo "::1       localhost" >> /etc/hosts
 echo "127.0.1.1 archlinux.localdomain archlinux" >> /etc/hosts
 
-pacman -S grub reflector base-devel linux-headers  bluez bluez-utils pulseaudio openssh rsync reflector acpi acpi_call acpid tlp os-prober ntfs-3g terminus-font iwctl
+pacman -S grub efibootmgr reflector base-devel linux-headers  bluez bluez-utils pulseaudio openssh rsync reflector acpi acpi_call acpid tlp os-prober ntfs-3g terminus-font iwctl
 
 pacman -S  nvidia nvidia-utils 
 
