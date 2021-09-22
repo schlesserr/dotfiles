@@ -6,6 +6,8 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'morhetz/gruvbox'
 Plug 'joshdick/onedark.vim'
+Plug 'sainnhe/sonokai'
+Plug 'arcticicestudio/nord-vim'
 Plug 'ap/vim-css-color'
 Plug 'itchyny/lightline.vim'
 Plug 'airblade/vim-gitgutter'
@@ -52,16 +54,14 @@ autocmd FileType css setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2
 
 " color scheme
-colorscheme falcon
-set background=dark
-let g:gruvbox_contrast_dark='hard'
+colorscheme nord
 highlight Comment cterm=italic
 "highlight ColorColumn ctermbg=0 guibg=lightgrey
 " enable 256 colors
 set t_Co=256
 
 set noshowmode
-let g:lightline = {'colorscheme': 'falcon'}
+let g:lightline = {'colorscheme': 'nord'}
 
 filetype on
 filetype plugin indent on
