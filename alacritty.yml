@@ -2,17 +2,20 @@
     #- .config/alacritty/dracula.yml
 # Sample Font configuration for font: Monoid.
 # Feel free to use different font configuration family & face for each sections
+dpi:
+  189
+
 font:
   # normal font face - also used to draw glyphs on tmux & vim
   # note: you may use any font you'd like but make sure the normal fonts
   # support ligatures/glyphs. that's used by tmux & vim to provide a better
   # ui for powerline & tmux bottom bar.
-  size: 10
+  size: 8
   normal:
     ## Font name
     family: FiraCode
     ## Font face
-    style: Regular
+    style: Retina
 
   ## Bold font face
   bold:
