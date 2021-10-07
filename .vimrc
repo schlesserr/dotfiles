@@ -4,6 +4,8 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-dispatch'
+Plug 'vim-test/vim-test'
 Plug 'morhetz/gruvbox'
 Plug 'joshdick/onedark.vim'
 Plug 'sainnhe/sonokai'
@@ -128,6 +130,7 @@ nmap <F8> :TagbarToggle<CR>
 let g:fzf_layout = {'window': {'width': 0.9, 'height': 0.9}}
 let g:help_layout = {'window': {'width': 0.9, 'height': 0.9}}
 
+let test#strategy = 'dispatch'
 " disable autoindent when pasting text
 " source: https://coderwall.com/p/if9mda/automatically-set-paste-mode-in-vim-when-pasting-in-insert-mode
 let &t_SI .= "\<Esc>[?2004h"
