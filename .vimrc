@@ -15,6 +15,7 @@ Plug 'jupyter-vim/jupyter-vim'
 Plug 'morhetz/gruvbox'
 Plug 'joshdick/onedark.vim'
 Plug 'arcticicestudio/nord-vim'
+Plug 'nanotech/jellybeans.vim'
 call plug#end()
 
 filetype plugin indent on
@@ -55,9 +56,9 @@ autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2
 
 " color scheme
 highlight Comment cterm=italic
-colorscheme gruvbox
+colorscheme jellybeans
 set bg=dark
-let g:lightline = {'colorscheme': 'gruvbox'}
+let g:lightline = {'colorscheme': 'jellybeans'}
 
 filetype on
 filetype plugin indent on
@@ -72,7 +73,9 @@ let g:ale_fix_on_save = 1
 let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
 let g:ale_open_list = 1
-
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 "fzf
 :map <C-f> :Files<CR>
 :map <C-b> :Buffers<CR>
