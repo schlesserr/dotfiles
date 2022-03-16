@@ -11,18 +11,22 @@ Plug 'dense-analysis/ale'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'jupyter-vim/jupyter-vim'
+Plug 'vim-python/python-syntax'
 "colorschemes
 Plug 'morhetz/gruvbox'
 Plug 'joshdick/onedark.vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'nanotech/jellybeans.vim'
+Plug 'owickstrom/vim-colors-paramount'
 call plug#end()
 
 filetype plugin indent on
+let python_highlight_all=1
 syntax on
 set noswapfile
 set scrolloff=20
 set incsearch
+" set hlsearch
 " always show the status bar
 set laststatus=2
 set cursorline
@@ -55,9 +59,12 @@ autocmd FileType css setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2
 
 " color scheme
-highlight Comment cterm=italic
-colorscheme jellybeans
 set bg=dark
+let g:gruvbox_contrast_dark = 'hard'
+colorscheme paramount
+highlight Comment cterm=italic
+let g:gruvbox_italicize_comments=1
+let g:gruvbox_italicize_strings=1
 let g:lightline = {'colorscheme': 'jellybeans'}
 
 filetype on

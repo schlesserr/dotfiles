@@ -61,41 +61,30 @@ key_bindings:
   - { key: LBracket, mods: Control, chars: "\x01\x70" }
   # Use command + ] - to go to next tmux window
   - { key: RBracket, mods: Control, chars: "\x01\x6e" }
-# Colors (Jellybeans)
 colors:
   # Default colors
   primary:
-    background: '#030303'
-    foreground: '#e4e4e4'
-
-  # Cursor volors
-  cursor:
-    text: '#feffff'
-    cursor: '#ffb472'
+    background: '#000000'
+    foreground: '#dddddd'
 
   # Normal colors
   normal:
-    black:   '#a3a3a3'
-    red:     '#e98885'
-    green:   '#a3c38b'
-    yellow:  '#ffc68d'
-    blue:    '#a6cae2'
-    magenta: '#e7cdfb'
-    cyan:    '#00a69f'
-    white:   '#e4e4e4'
+    black:   '#000000'
+    red:     '#cc0403'
+    green:   '#19cb00'
+    yellow:  '#cecb00'
+    blue:    '#0d73cc'
+    magenta: '#cb1ed1'
+    cyan:    '#0dcdcd'
+    white:   '#dddddd'
 
   # Bright colors
   bright:
-    black:   '#c8c8c8'
-    red:     '#ffb2b0'
-    green:   '#c8e2b9'
-    yellow:  '#ffe1af'
-    blue:    '#bddff7'
-    magenta: '#fce2ff'
-    cyan:    '#0bbdb6'
-    white:   '#feffff'
-
-  # Selection colors
-  selection:
-    text: '#5963a2'
-    background: '#f6f6f6'
+    black:   '#767676'
+    red:     '#f2201f'
+    green:   '#23fd00'
+    yellow:  '#fffd00'
+    blue:    '#1a8fff'
+    magenta: '#fd28ff'
+    cyan:    '#14ffff'
+    white:   '#ffffff'
