@@ -2,6 +2,11 @@
     #- .config/alacritty/dracula.yml
 # Sample Font configuration for font: Monoid.
 # Feel free to use different font configuration family & face for each sections
+cursor:
+  style:
+    blinking: Always
+  blink_interval: 400
+
 dpi:
   189
 
@@ -13,13 +18,13 @@ font:
   size: 10
   normal:
     ## Font name
-    family: FiraCode
+    family: Fira Code Nerd Font
     ## Font face
     style: Retina
 
   ## Bold font face
   bold:
-    family: FiraCode
+    family: Fira Code Nerd Font
     style: Bold
 
   # Italic font face
@@ -61,30 +66,58 @@ key_bindings:
   - { key: LBracket, mods: Control, chars: "\x01\x70" }
   # Use command + ] - to go to next tmux window
   - { key: RBracket, mods: Control, chars: "\x01\x6e" }
-colors:
-  # Default colors
-  primary:
-    background: '#000000'
-    foreground: '#dddddd'
+# colors:
+#   # Default colors
+#   primary:
+#     background: '#000000'
+#     foreground: '#dddddd'
 
-  # Normal colors
-  normal:
-    black:   '#000000'
-    red:     '#cc0403'
-    green:   '#19cb00'
-    yellow:  '#cecb00'
-    blue:    '#0d73cc'
-    magenta: '#cb1ed1'
-    cyan:    '#0dcdcd'
-    white:   '#dddddd'
+#   # Normal colors
+#   normal:
+#     black:   '#000000'
+#     red:     '#cc0403'
+#     green:   '#19cb00'
+#     yellow:  '#cecb00'
+#     blue:    '#0d73cc'
+#     magenta: '#cb1ed1'
+#     cyan:    '#0dcdcd'
+#     white:   '#dddddd'
 
-  # Bright colors
-  bright:
-    black:   '#767676'
-    red:     '#f2201f'
-    green:   '#23fd00'
-    yellow:  '#fffd00'
-    blue:    '#1a8fff'
-    magenta: '#fd28ff'
-    cyan:    '#14ffff'
-    white:   '#ffffff'
+#   # Bright colors
+#   bright:
+#     black:   '#767676'
+#     red:     '#f2201f'
+#     green:   '#23fd00'
+#     yellow:  '#fffd00'
+#     blue:    '#1a8fff'
+#     magenta: '#fd28ff'
+#     cyan:    '#14ffff'
+#     white:   '#ffffff'
+# Colors (Seoul256)
+# colors:
+#   # Default colors
+#   primary:
+#     background: '#3a3a3a'
+#     foreground: '#d0d0d0'
+
+#     # Normal colors
+#   normal:
+#     black:   '#4e4e4e'
+#     red:     '#d68787'
+#     green:   '#5f865f'
+#     yellow:  '#d8af5f'
+#     blue:    '#85add4'
+#     magenta: '#d7afaf'
+#     cyan:    '#87afaf'
+#     white:   '#d0d0d0'
+
+#     # Bright colors
+#   bright:
+#     black:   '#626262'
+#     red:     '#d75f87'
+#     green:   '#87af87'
+#     yellow:  '#ffd787'
+#     blue:    '#add4fb'
+#     magenta: '#ffafaf'
+#     cyan:    '#87d7d7'
+#     white:   '#e4e4e4'
