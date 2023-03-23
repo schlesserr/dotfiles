@@ -4,6 +4,16 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-dadbod'
+" xnoremap <leader>db <Plug>db#op_exec()
+" nnoremap <leader>db <Plug>db#op_exec()
+" nnoremap <leader>dbb <Plug>db#op_exec() . '_'
+
+nmap <leader>dy db#op_exec()<CR>
+" nmap <leader>db  
+" omap <leader>db  
+" nmap <leader>dbb 
+
 Plug 'vim-test/vim-test'
 
 Plug 'itchyny/lightline.vim'
@@ -23,12 +33,12 @@ Plug 'dense-analysis/ale'
 map <C-j> <Plug>(ale_next_wrap)
 map <C-k> <Plug>(ale_previous_wrap)
 let g:ale_fixers = {'python': ['isort', 'black']}
-let g:ale_linters = {'python': ['flake8', 'pyright']}
+let g:ale_linters = {'python': ['pyright']}
 let g:ale_python_black_options = '-S -l 79'
 let g:ale_fix_on_save = 1
 let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
-let g:ale_open_list = 1
+let g:ale_open_list = 0
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
