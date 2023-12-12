@@ -7,8 +7,8 @@ cursor:
     blinking: Always
   blink_interval: 400
 
-dpi:
-  189
+# dpi:
+#   189
 
 font:
   # normal font face - also used to draw glyphs on tmux & vim
@@ -18,18 +18,18 @@ font:
   size: 10
   normal:
     ## Font name
-    family: JetBrainsMono Nerd Font
+    family: Fira Code
     ## Font face
     style: Retina
 
   ## Bold font face
   bold:
-    family: JetBrainsMono Nerd Font
+    family: VictorMono Nerd Font
     style: Bold
 
   # Italic font face
   italic:
-    family: Operator Mono
+    family: VictorMono Nerd Font
     # family: VictorMono Nerd Font
     style: Italic
 
@@ -68,113 +68,110 @@ key_bindings:
   # Use command + ] - to go to next tmux window
   - { key: RBracket, mods: Control, chars: "\x01\x6e" }
 
-# # github Alacritty Colors
-# colors:
-#   # Default colors
-#   primary:
-#     background: '0x0d1117'
-#     foreground: '0xb3b1ad'
+##Catpuccin
+#colors:
+#    primary:
+#        background: "#1E1E2E" # base
+#        foreground: "#CDD6F4" # text
+#        # Bright and dim foreground colors
+#        dim_foreground: "#CDD6F4" # text
+#        bright_foreground: "#CDD6F4" # text
 
-#   # Normal colors
-#   normal:
-#     black:   '0x484f58'
-#     red:     '0xff7b72'
-#     green:   '0x3fb950'
-#     yellow:  '0xd29922'
-#     blue:    '0x58a6ff'
-#     magenta: '0xbc8cff'
-#     cyan:    '0x39c5cf'
-#     white:   '0xb1bac4'
+#    # Cursor colors
+#    cursor:
+#        text: "#1E1E2E" # base
+#        cursor: "#F5E0DC" # rosewater
+#    vi_mode_cursor:
+#        text: "#1E1E2E" # base
+#        cursor: "#B4BEFE" # lavender
 
-#   # Bright colors
-#   bright:
-#     black:   '0x6e7681'
-#     red:     '0xffa198'
-#     green:   '0x56d364'
-#     yellow:  '0xe3b341'
-#     blue:    '0x79c0ff'
-#     magenta: '0xd2a8ff'
-#     cyan:    '0x56d4dd'
-#     white:   '0xf0f6fc'
+#    # Search colors
+#    search:
+#        matches:
+#            foreground: "#1E1E2E" # base
+#            background: "#A6ADC8" # subtext0
+#        focused_match:
+#            foreground: "#1E1E2E" # base
+#            background: "#A6E3A1" # green
+#        footer_bar:
+#            foreground: "#1E1E2E" # base
+#            background: "#A6ADC8" # subtext0
 
-#   indexed_colors:
-#     - { index: 16, color: '0xd18616' }
-#     - { index: 17, color: '0xffa198' }
+#    # # Keyboard regex hints
+#    hints:
+#        start:
+#            foreground: "#1E1E2E" # base
+#            background: "#F9E2AF" # yellow
+#        end:
+#            foreground: "#1E1E2E" # base
+#            background: "#A6ADC8" # subtext0
+
+#    # Selection colors
+#    selection:
+#        text: "#1E1E2E" # base
+#        background: "#F5E0DC" # rosewater
+
+#    # Normal colors
+#    normal:
+#        black: "#45475A" # surface1
+#        red: "#F38BA8" # red
+#        green: "#A6E3A1" # green
+#        yellow: "#F9E2AF" # yellow
+#        blue: "#89B4FA" # blue
+#        magenta: "#F5C2E7" # pink
+#        cyan: "#94E2D5" # teal
+#        white: "#BAC2DE" # subtext1
+
+#    # Bright colors
+#    bright:
+#        black: "#585B70" # surface2
+#        red: "#F38BA8" # red
+#        green: "#A6E3A1" # green
+#        yellow: "#F9E2AF" # yellow
+#        blue: "#89B4FA" # blue
+#        magenta: "#F5C2E7" # pink
+#        cyan: "#94E2D5" # teal
+#        white: "#A6ADC8" # subtext0
+
+#    # Dim colors
+#    dim:
+#        black: "#45475A" # surface1
+#        red: "#F38BA8" # red
+#        green: "#A6E3A1" # green
+#        yellow: "#F9E2AF" # yellow
+#        blue: "#89B4FA" # blue
+#        magenta: "#F5C2E7" # pink
+#        cyan: "#94E2D5" # teal
+#        white: "#BAC2DE" # subtext1
+
+# Colors (Gruvbox dark)
 colors:
-    primary:
-        background: "#1E1E2E" # base
-        foreground: "#CDD6F4" # text
-        # Bright and dim foreground colors
-        dim_foreground: "#CDD6F4" # text
-        bright_foreground: "#CDD6F4" # text
+  # Default colors
+  primary:
+    # hard contrast:
+    background: '0x1d2021'
+    # background: '0x282828'
+    # soft contrast: background = '0x32302f'
+    foreground: '0xebdbb2'
 
-    # Cursor colors
-    cursor:
-        text: "#1E1E2E" # base
-        cursor: "#F5E0DC" # rosewater
-    vi_mode_cursor:
-        text: "#1E1E2E" # base
-        cursor: "#B4BEFE" # lavender
+  # Normal colors
+  normal:
+    black:   '0x282828'
+    red:     '0xcc241d'
+    green:   '0x98971a'
+    yellow:  '0xd79921'
+    blue:    '0x458588'
+    magenta: '0xb16286'
+    cyan:    '0x689d6a'
+    white:   '0xa89984'
 
-    # Search colors
-    search:
-        matches:
-            foreground: "#1E1E2E" # base
-            background: "#A6ADC8" # subtext0
-        focused_match:
-            foreground: "#1E1E2E" # base
-            background: "#A6E3A1" # green
-        footer_bar:
-            foreground: "#1E1E2E" # base
-            background: "#A6ADC8" # subtext0
-
-    # # Keyboard regex hints
-    hints:
-        start:
-            foreground: "#1E1E2E" # base
-            background: "#F9E2AF" # yellow
-        end:
-            foreground: "#1E1E2E" # base
-            background: "#A6ADC8" # subtext0
-
-    # Selection colors
-    selection:
-        text: "#1E1E2E" # base
-        background: "#F5E0DC" # rosewater
-
-    # Normal colors
-    normal:
-        black: "#45475A" # surface1
-        red: "#F38BA8" # red
-        green: "#A6E3A1" # green
-        yellow: "#F9E2AF" # yellow
-        blue: "#89B4FA" # blue
-        magenta: "#F5C2E7" # pink
-        cyan: "#94E2D5" # teal
-        white: "#BAC2DE" # subtext1
-
-    # Bright colors
-    bright:
-        black: "#585B70" # surface2
-        red: "#F38BA8" # red
-        green: "#A6E3A1" # green
-        yellow: "#F9E2AF" # yellow
-        blue: "#89B4FA" # blue
-        magenta: "#F5C2E7" # pink
-        cyan: "#94E2D5" # teal
-        white: "#A6ADC8" # subtext0
-
-    # Dim colors
-    dim:
-        black: "#45475A" # surface1
-        red: "#F38BA8" # red
-        green: "#A6E3A1" # green
-        yellow: "#F9E2AF" # yellow
-        blue: "#89B4FA" # blue
-        magenta: "#F5C2E7" # pink
-        cyan: "#94E2D5" # teal
-        white: "#BAC2DE" # subtext1
-
-    # indexed_colors:
-    #     - { index: 16, color: "#FAB387" }
-    #     - { index: 17, color: "#F5E0DC" }
+  # Bright colors
+  bright:
+    black:   '0x928374'
+    red:     '0xfb4934'
+    green:   '0xb8bb26'
+    yellow:  '0xfabd2f'
+    blue:    '0x83a598'
+    magenta: '0xd3869b'
+    cyan:    '0x8ec07c'
+    white:   '0xebdbb2'
