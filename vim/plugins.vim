@@ -11,4 +11,5 @@ call plug#begin()
     Plug 'junegunn/fzf', {'do': { -> fzf#install() }}
     Plug 'junegunn/fzf.vim'
     Plug 'morhetz/gruvbox'
+    Plug 'vim-python/python-syntax'
 call plug#end()
