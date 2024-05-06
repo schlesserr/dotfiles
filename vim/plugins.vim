@@ -12,4 +12,6 @@ call plug#begin()
     Plug 'junegunn/fzf.vim'
     Plug 'morhetz/gruvbox'
     Plug 'vim-python/python-syntax'
+    Plug 'python-mode/python-mode'
+    Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 call plug#end()

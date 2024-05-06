@@ -38,7 +38,14 @@ let lspServers = [#{
             \    }
             \    }
             \   }}
-            \ }]
+            \ },
+            \ #{
+            \   name: 'golang',
+            \   filetype: ['go', 'gomod'],
+            \   path: 'gopls',
+            \   args: ['serve'],
+            \   syncInit: v:true
+            \}]
 autocmd VimEnter * call LspAddServer(lspServers)
 
 highlight LspErrorText       guibg=#343f44 guifg=#e67e80
