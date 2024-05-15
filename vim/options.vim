@@ -7,8 +7,8 @@ augroup end
 filetype plugin indent on
 let python_highlight_all=1
 syntax on
-autocmd Filetype help wincmd L
-autocmd Filetype man wincmd L
+autocmd FileType help wincmd L
+autocmd FileType man wincmd L
 set noswapfile
 set splitright
 set scrolloff=20
