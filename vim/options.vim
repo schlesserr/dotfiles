@@ -1,14 +1,6 @@
-let g:black_linelength = 79
-let g:black_skip_string_normalization = 1
-augroup black_on_save
-    autocmd!
-    autocmd BufWritePre *.py Black
-augroup end
 filetype plugin indent on
 let python_highlight_all=1
 syntax on
-autocmd FileType help wincmd L
-autocmd FileType man wincmd L
 set noswapfile
 set splitright
 set scrolloff=20
@@ -37,6 +29,9 @@ set clipboard+=unnamedplus
 
 highlight Comment cterm=italic
 
+autocmd FileType help wincmd L
+autocmd FileType man wincmd L
+autocmd FileType doc wincmd L
 autocmd FileType html setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType css setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2
