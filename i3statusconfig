@@ -8,6 +8,7 @@ order += "disk /"
 order += "memory"
 order += "wireless _first_"
 order += "load"
+order += "volume master"
 order += "tztime local"
 
 wireless _first_ {
@@ -28,6 +29,12 @@ disk "/" {
 }
 
 memory {
-        format = "Mem: <span color='#FF0000'>%used</span> <span color='#00FF00'>%free</span>"
+        format = "Mem Used: %used | Mem Free: %free"
+}
+
+volume master {
+        format = "♪: %volume"
+        format_muted = "♪: muted (%volume)"
+        device = "pulse:alsa_output.pci-0000_00_1f.3.analog-stereo"
 }
 # TODO: add temp vga and cpu
