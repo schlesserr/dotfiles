@@ -1,6 +1,9 @@
 vim9script
 
-var lspOpts = {hoverInPreview: v:false}
+var lspOpts = {
+    hoverInPreview: v:false,
+    outlineWinSize: 30
+}
 autocmd User LspSetup call LspOptionsSet(lspOpts)
 
 var lspServers = [
@@ -56,8 +59,8 @@ var lspServers = [
     {
       name: 'ruff',
       filetype: 'python',
-      path: 'ruff-lsp',
-      args: [],
+      path: 'ruff',
+      args: ['server', '--preview'],
       features: {
           codeAction: true
       },
