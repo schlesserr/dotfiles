@@ -50,12 +50,12 @@ style = "Regular"
 
 [[keyboard.bindings]]
 chars = "\u0001p"
-key = "LBracket"
+key = "ArrowLeft"
 mods = "Control"
 
 [[keyboard.bindings]]
 chars = "\u0001n"
-key = "RBracket"
+key = "ArrowRight"
 mods = "Control"
 
 [selection]
