@@ -1,7 +1,7 @@
 export ZSH="/home/schlesser/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
 
-plugins=(git vi-mode zsh-syntax-highlighting poetry httpie)
+plugins=(git vi-mode zsh-syntax-highlighting poetry httpie colored-man-pages)
 
 VI_MODE_SET_CURSOR=true
 MODE_INDICATOR="%F{yellow}+%f"
@@ -14,8 +14,6 @@ export FZF_DEFAULT_COMMAND='fd --type f -H'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 # export FZF_TMUX_OPTS='-d 40%'
 export FZF_TMUX_OPTS='-p80%,60%'
-# morhetz/gruvbox
-export FZF_DEFAULT_OPTS='--color=bg+:#3c3836,bg:#1d2021,spinner:#fb4934,hl:#928374,fg:#ebdbb2,header:#928374,info:#8ec07c,pointer:#fb4934,marker:#fb4934,fg+:#ebdbb2,prompt:#fb4934,hl+:#fb4934'
 
 export EDITOR=vim
 source /usr/share/fzf/key-bindings.zsh
@@ -23,25 +21,27 @@ source /usr/share/fzf/completion.zsh
 
 alias :q='exit'
 
-alias ls='exa -l'
-alias la='exa -la'
-# alias tree='exa -T'
+alias v='vim'
+alias ls='eza -l'
+alias la='eza -la'
 alias rr='reboot'
-alias yazi='kitty -e yazi'
+alias ezp='eza -la --git -I ".git|.ruff_cache|__pycache__|.venv" -T'
+alias emacs='emacsclient -c -a "emacs"'
+alias sa="source .venv/bin/activate"
 
-fzf-down() {
-  fzf-tmux --min-height 20 --border --bind ctrl-/:toggle-preview "$@"
-}
+# fzf-down() {
+#   fzf-tmux --min-height 20 --border --bind ctrl-/:toggle-preview "$@"
+# }
 
 p() {
     du -a . | awk '{print $2}' | fzf-down --multi --preview-window right:70% --preview 'bat --style=numbers --color=always --line-range :500 {}' | xargs -r $EDITOR
 }
 
-function alfred() {
+rfunction alfred() {
     type=$BUFFER
     zle backward-kill-line
     echo "fd --type f -e $type . $PWD | rofi -keep-right -dmenu -i -p Files -multiselect | xargs -I {} xdg-open {}"
-    fd . $PWD | rofi -keep-right -dmenu -i -p Files -multiselect -theme gruvbox-dark-hard | xargs -I {} xdg-open {}
+    fd . $PWD | rofi -keep-right -dmenu -i -p Files -multiselect -theme arthur | xargs -I {} xdg-open {}
     zle reset-prompt
     zle redisplay
 }
@@ -51,12 +51,23 @@ bindkey '^@' alfred
                             
 
 bindkey -s '^P' '$(p)^M'
-eval "$(starship init zsh)"
+
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey '^xe' edit-command-line
+bindkey '^x^e' edit-command-line
+bindkey -M vicmd v edit-command-line
+
+eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/zen.toml)"
 eval "$(zoxide init zsh)"
+# eval "$(starship init zsh)"
 
 export PATH="/home/schlesser/.local/bin:$PATH"
 complete -C '/usr/bin/aws_completer' aws
 
-export MANPAGER="bat -p -l man"
-export BAT_THEME="gruvbox-dark"
+# export MANPAGER="bat -p -l man"
+export BAT_THEME="1337"
 export VIMINIT='source ~/.vim/init.vim'
+export PATH="$HOME/.config/emacs/bin:$PATH"
+export TERMINAL='xterm-ghostty'
+export PATH='/home/schlesser/.duckdb/cli/latest':$PATH

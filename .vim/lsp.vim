@@ -2,7 +2,10 @@ vim9script
 
 var lspOpts = {
     hoverInPreview: v:false,
-    outlineWinSize: 30
+    outlineWinSize: 30,
+    showDiagWithVirtualText: v:false,
+    diagVirtualTextAlign: 'after',
+    diagVirtualTextWrap: 'truncate'
 }
 autocmd User LspSetup call LspOptionsSet(lspOpts)
 
@@ -62,14 +65,15 @@ var lspServers = [
       path: 'ruff',
       args: ['server', '--preview'],
       features: {
-          codeAction: true
+          codeAction: true,
+          documentFormatting: true
       },
     },
 ]
 
 autocmd User LspSetup call LspAddServer(lspServers)
 
-highlight LspErrorText       guibg=#343f44 guifg=#e67e80
-highlight LspWarningText     guibg=#343f44 guifg=#dbbc7f
-highlight LspInformationText guibg=#343f44 guifg=#d699b6
-highlight LspHintText        guibg=#343f44 guifg=#7fbbb3
+# highlight LspErrorText       guibg=#343f44 guifg=#e67e80
+# highlight LspWarningText     guibg=#343f44 guifg=#dbbc7f
+# highlight LspInformationText guibg=#343f44 guifg=#d699b6
+# highlight LspHintText        guibg=#343f44 guifg=#7fbbb3
