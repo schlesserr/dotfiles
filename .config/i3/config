@@ -29,6 +29,7 @@ exec --no-startup-id source feh --bg-max ~/Pictures/samurai.jpg
 exec --no-startup-id picom --config ~/.config/picom.conf
 exec --no-startup-id emacs --daemon
 exec xrandr --output DP-1 --mode 3840x2160 --scale 0.9x0.9
+exec xrandr --output HDMI-2 --mode 1920x1080
 
 
 bindsym $mod+j focus left

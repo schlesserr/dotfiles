@@ -30,12 +30,42 @@ highlight Comment cterm=italic
 autocmd FileType help wincmd L
 autocmd FileType man wincmd L
 autocmd FileType doc wincmd L
+autocmd FileType dbout wincmd L
 autocmd FileType html setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType css setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2
+
+" Configurações do vim-dadbod-completion
+let g:dadbod_completion_backend = 'vim-dadbod'
+let g:db_completion_use_snippets = 1
+let g:db_completion_auto_trigger = 1
+
+" Configurar omnifunc para arquivos SQL
+autocmd FileType sql,mysql,plsql setlocal omnifunc=vim_dadbod_completion#omni
+
+" # Configuração Vim9 Script - Suporte a Python 3 no Linux
+set pyxversion=3 " # Garante uso do Python 3
 
 set t_Co=256
 set termguicolors
 let &t_8f = "\<Esc>[38:2:%lu:%lu:%lum"
 let &t_8b = "\<Esc>[48:2:%lu:%lu:%lum"
+let g:repl_program = {
+            \   'python': 'ipython',
+            \   'default': 'zsh',
+            \   'r': 'R',
+            \   'lua': 'lua',
+            \   'vim': 'vim -e',
+            \   }
+
+let g:repl_cursor_down = 1
+let g:repl_python_automerge = 1
+let g:repl_ipython_version = '9'
+let g:repl_output_copy_to_register = "t"
+nnoremap <leader>r :REPLToggle<Cr>
+nnoremap <leader>e :REPLSendSession<Cr>
+autocmd Filetype python nnoremap <F12> <Esc>:REPLDebugStopAtCurrentLine<Cr>
+autocmd Filetype python nnoremap <F10> <Esc>:REPLPDBN<Cr>
+autocmd Filetype python nnoremap <F11> <Esc>:REPLPDBS<Cr>
+let g:repl_position = 3
 

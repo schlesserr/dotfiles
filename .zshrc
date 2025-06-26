@@ -7,13 +7,13 @@ VI_MODE_SET_CURSOR=true
 MODE_INDICATOR="%F{yellow}+%f"
 
 source $ZSH/oh-my-zsh.sh
-
+source /usr/share/nvm/init-nvm.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='fd --type f -H'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 # export FZF_TMUX_OPTS='-d 40%'
-export FZF_TMUX_OPTS='-p80%,60%'
+# export FZF_TMUX_OPTS='-p80%,60%'
 
 export EDITOR=vim
 source /usr/share/fzf/key-bindings.zsh
@@ -28,6 +28,7 @@ alias rr='reboot'
 alias ezp='eza -la --git -I ".git|.ruff_cache|__pycache__|.venv" -T'
 alias emacs='emacsclient -c -a "emacs"'
 alias sa="source .venv/bin/activate"
+alias plog="podman logs $1 | bat --paging=never -l log"
 
 # fzf-down() {
 #   fzf-tmux --min-height 20 --border --bind ctrl-/:toggle-preview "$@"
@@ -71,3 +72,10 @@ export VIMINIT='source ~/.vim/init.vim'
 export PATH="$HOME/.config/emacs/bin:$PATH"
 export TERMINAL='xterm-ghostty'
 export PATH='/home/schlesser/.duckdb/cli/latest':$PATH
+
+
+## [Completion]
+## Completion scripts setup. Remove the following line to uninstall
+[[ -f /home/schlesser/.dart-cli-completion/zsh-config.zsh ]] && . /home/schlesser/.dart-cli-completion/zsh-config.zsh || true
+## [/Completion]
+
