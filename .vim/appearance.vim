@@ -1,4 +1,4 @@
-let g:fzf_layout = {'window': {'width': 0.9, 'height': 0.6, 'relative': v:true, 'yoffset': 1.0 }}
+let g:fzf_layout = {'window': {'width': 0.9, 'height': 0.6, 'yoffset': 1.0 }}
 let g:fzf_colors =
             \ {'fg':      ['fg', 'Normal'],
             \ 'bg':      ['bg', 'Normal'],
@@ -15,7 +15,7 @@ let g:fzf_colors =
             \ 'header':  ['fg', 'Comment'] }
 
 let g:lightline = {
-            \ 'colorscheme': 'gruvbox',
+            \ 'colorscheme': 'wombat',
             \ 'active': {
             \ 'left': [ [ 'mode', 'paste'],
             \           [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
@@ -30,6 +30,6 @@ let g:gruvbox_contrast_dark = 'hard'
 let g:gruvbox_italicize_comments=1
 let g:gruvbox_italicize_strings=1
 set bg=dark
-colorscheme gruvbox
+colorscheme habamax
 highlight Comment cterm=italic
 

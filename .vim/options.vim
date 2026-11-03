@@ -23,7 +23,7 @@ set expandtab
 set viminfo='25,\"50,n~/.viminfo
 set wildmenu wildoptions=pum,fuzzy pumheight=25
 set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
-set clipboard+=unnamedplus
+" set clipboard=unnamedplus
 
 highlight Comment cterm=italic
 

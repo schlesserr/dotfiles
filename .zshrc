@@ -1,4 +1,4 @@
-export ZSH="/home/schlesser/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
 
 plugins=(git vi-mode zsh-syntax-highlighting poetry httpie colored-man-pages)
@@ -7,7 +7,7 @@ VI_MODE_SET_CURSOR=true
 MODE_INDICATOR="%F{yellow}+%f"
 
 source $ZSH/oh-my-zsh.sh
-source /usr/share/nvm/init-nvm.sh
+# source /usr/share/nvm/init-nvm.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='fd --type f -H'
@@ -16,8 +16,9 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 # export FZF_TMUX_OPTS='-p80%,60%'
 
 export EDITOR=vim
-source /usr/share/fzf/key-bindings.zsh
-source /usr/share/fzf/completion.zsh
+# source /usr/share/fzf/key-bindings.zsh
+# source /usr/share/fzf/completion.zsh
+source <(fzf --zsh)
 
 alias :q='exit'
 
@@ -64,7 +65,7 @@ eval "$(zoxide init zsh)"
 # eval "$(starship init zsh)"
 
 export PATH="/home/schlesser/.local/bin:$PATH"
-complete -C '/usr/bin/aws_completer' aws
+# complete -C '/usr/bin/aws_completer' aws
 
 # export MANPAGER="bat -p -l man"
 export BAT_THEME="1337"
@@ -79,3 +80,4 @@ export PATH='/home/schlesser/.duckdb/cli/latest':$PATH
 [[ -f /home/schlesser/.dart-cli-completion/zsh-config.zsh ]] && . /home/schlesser/.dart-cli-completion/zsh-config.zsh || true
 ## [/Completion]
 
+export PATH="$HOME/.local/bin:$PATH"
