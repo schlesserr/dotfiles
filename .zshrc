@@ -31,33 +31,9 @@ alias emacs='emacsclient -c -a "emacs"'
 alias sa="source .venv/bin/activate"
 alias plog="podman logs $1 | bat --paging=never -l log"
 
-# fzf-down() {
-#   fzf-tmux --min-height 20 --border --bind ctrl-/:toggle-preview "$@"
-# }
-
-p() {
-    du -a . | awk '{print $2}' | fzf-down --multi --preview-window right:70% --preview 'bat --style=numbers --color=always --line-range :500 {}' | xargs -r $EDITOR
-}
-
-rfunction alfred() {
-    type=$BUFFER
-    zle backward-kill-line
-    echo "fd --type f -e $type . $PWD | rofi -keep-right -dmenu -i -p Files -multiselect | xargs -I {} xdg-open {}"
-    fd . $PWD | rofi -keep-right -dmenu -i -p Files -multiselect -theme arthur | xargs -I {} xdg-open {}
-    zle reset-prompt
-    zle redisplay
-}
-
-zle -N alfred
-bindkey '^@' alfred
-                            
-
-bindkey -s '^P' '$(p)^M'
 
 autoload -U edit-command-line
 zle -N edit-command-line
-bindkey '^xe' edit-command-line
-bindkey '^x^e' edit-command-line
 bindkey -M vicmd v edit-command-line
 
 eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/zen.toml)"
